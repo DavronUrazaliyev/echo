@@ -13,8 +13,8 @@ def index():
     if 'text' in data['message']:
         bot.send_message(chat_id=data['message']['chat']['id'], text=data['message']['text'])
 
-    if 'file_id' in data['message']:
-        bot.send_document(chat_id=data['message']['chat']['id'], document=data['message']['file_id'])
+    elif 'photo' in data['message']:
+        bot.send_photo(chat_id=data['message']['chat']['id'], document=data['message']['photo']['file_id'])
 
     return 'index page'
 
