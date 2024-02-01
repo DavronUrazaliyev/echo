@@ -11,6 +11,7 @@ def index():
     data=request.get_json()
     print(data)
     bot.send_message(chat_id=data['message']['chat']['id'],text=data['message']['text'])
+    bot.send_message(chat_id=data['message']['chat']['id'],file=data['message']['file_id'])
     return 'index page'
 
 if __name__=="__main__":
